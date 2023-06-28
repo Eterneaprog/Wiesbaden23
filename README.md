@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.casd.eu">
-  <img src="logos/casd.png" alt="logo casd" width="500">
+  <img src="/logos/casd.png" alt="logo casd" width="500">
   </a>
 </p>
 
