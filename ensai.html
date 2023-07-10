@@ -29,40 +29,36 @@
 					<a href="https://casd.eu">
 						<img src="logos/casd_logo.png" alt="casd logo" style="height: 250px; margin: 0 auto 4rem auto; background:transparent; -webkit-filter: invert(1); filter: invert(1);" class="demo-logo">
 					</a>
-					<h3>A mixed-method to check data outputs from research works</h3>
+					<h3>Un modèle d'apprentissage au service de la détection des fuites de données</h3>
 					<p>
-						<small>Remy Marquier - Titouan Rigaud</small>
+						<small>Titouan Rigaud</small>
 					</p>
 				</section>
 
 				<section>
 
 					<section data-background="images/bg-green.png">
-					<h2>Context of our study</h2>
-					<p>Welcome to the world of output checking !</p>
+					<h2>Contexte</h2>
+					<p>Bienvenue dans le contrôle d'exports</p>
 					</section>
 
 					<section data-background="images/bg-grey.png">
-						<h3>Manual system</h3>
+						<h3>Le système manuel en place</h3>
 						<img src="images/manual.png" alt="manual schema" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
 					</section>
 
-				</section>
-
-				<section>
-
-					<section data-background="images/bg-green.png">
-					<h2>Our semi-automated system</h2>
-					<p>Warning : it looks complicated, but its actually simple</p>
-					</section>
-
 					<section data-background="images/bg-grey.png">
-						<h3>Theoretical semi-automated system</h3>
+						<h3>Processus d'apprentissage</h3>
 						<img src="images/automatic.png" alt="automatic schema" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
 					</section>
 
 					<section data-background="images/bg-grey.png">
-						<h3>Implementation</h3>
+						<h3>Un modèle complet</h3>
+						<img src="images/archi.png" alt="Architecture schema" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
+					</section>
+
+					<section data-background="images/bg-grey.png">
+						<h3>Methodologie de l'apprentissage</h3>
 						<img src="images/archi.png" alt="Architecture schema" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
 					</section>
 
@@ -71,133 +67,17 @@
 				<section>
 
 					<section data-background="images/bg-green.png">
-					<h2>Feature engineering</h2>
-					<p>A magic spell capable of transforming a zip containing files to ... variables ? </p>
+						<h2>Une démonstration du processus d'entrainement et d'évaluation</h2>
+						<p>100 modèles à la portée d'un clic</p>
 					</section>
 
 					<section data-background="images/bg-grey.png">
-						<h3>Metadata</h3>
-						<img src="images/analyse.png" alt="Analyse an export" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
-					</section>
-
-					<section data-background="images/bg-grey.png">
-						<h3>Files</h3>
-						<img src="images/files.png" alt="Files management" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
-					</section>
-
-				</section>
-
-				<section>
-
-					<section data-background="images/bg-green.png">
-					<h2>Training models on these features</h2>
-					<p>A gentle introduction to parallel architectures</p>
-					</section>
-
-					<section data-background="images/bg-grey.png">
-						<h3>Do you Kubernetes ? </h3>
+						<h3>Kuberenetes et les conteneurs</h3>
 						<img src="images/Kubernetes.png" alt="Kubernetes logo" style="height: 250px; margin: 0 auto 4rem auto; background:transparent;">
 					</section>
 
-					<section data-background="images/bg-grey.png" data-auto-animate>
-						<h3>Training models </h3>
-						<div class="r-stack">
-							<img class="fragment fade-out" data-fragment-index="0" src="images/kube_start.png" alt="Kubernetes start" style="height: 450px; margin: 0 auto 4rem auto; background:transparent;">
-							<img class="fragment current-visible" data-fragment-index="0" src="images/kube_middle.png" alt="Kubernetes start" style="height: 450px; margin: 0 auto 4rem auto; background:transparent;">
-							<img class="fragment" src="images/kube_end.png" alt="Kubernetes start" style="height: 450px; margin: 0 auto 4rem auto; background:transparent;">
-						  </div>
-						
-					</section>
-
 					<section data-background="images/bg-grey.png">
-						<h3>We can compare the models</h3>
-						<style type="text/css">
-							.tg  {border-collapse:collapse;border-spacing:0;}
-							.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-							  overflow:hidden;padding:10px 5px;word-break:normal;}
-							.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-							  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-							.tg .tg-0siv{background-color:#343434;border-color:#000000;color:#ffffff;font-size:22px;text-align:center;vertical-align:middle}
-							.tg .tg-xjqi{background-color:#663234;border-color:#000000;color:#ffffff;font-size:22px;text-align:center;vertical-align:middle}
-							.tg .tg-703t{background-color:#010066;border-color:#000000;color:#ffffff;font-size:22px;text-align:center;vertical-align:middle}
-							.tg .tg-gi6u{background-color:#000000;border-color:#000000;color:#ffffff;font-size:22px;text-align:center;vertical-align:middle}
-							</style>
-							<table class="tg">
-							<thead>
-							  <tr>
-								<th class="tg-gi6u">Model</th>
-								<th class="tg-xjqi">Learn Rate</th>
-								<th class="tg-xjqi">Depth</th>
-								<th class="tg-xjqi">Leaves</th>
-								<th class="tg-xjqi">Estimators</th>
-								<th class="tg-703t">FN</th>
-								<th class="tg-703t">FP</th>
-								<th class="tg-703t">TN</th>
-								<th class="tg-703t">TP</th>
-								<th class="tg-703t">ROC-AUC</th>
-								<th class="tg-703t">score</th>
-							  </tr>
-							</thead>
-							<tbody>
-							  <tr>
-								<td class="tg-0siv">1</td>
-								<td class="tg-0siv">0.07</td>
-								<td class="tg-0siv">4</td>
-								<td class="tg-0siv">10</td>
-								<td class="tg-0siv">200</td>
-								<td class="tg-0siv">113</td>
-								<td class="tg-0siv">994</td>
-								<td class="tg-0siv">2182</td>
-								<td class="tg-0siv">309</td>
-								<td class="tg-0siv">0.771</td>
-								<td class="tg-0siv">0.69</td>
-							  </tr>
-							  <tr>
-								<td class="tg-gi6u">2</td>
-								<td class="tg-gi6u">0.07</td>
-								<td class="tg-gi6u">4</td>
-								<td class="tg-gi6u">10</td>
-								<td class="tg-gi6u">250</td>
-								<td class="tg-gi6u">118</td>
-								<td class="tg-gi6u">964</td>
-								<td class="tg-gi6u">2212</td>
-								<td class="tg-gi6u">304</td>
-								<td class="tg-gi6u">0.770</td>
-								<td class="tg-gi6u">0.70</td>
-							  </tr>
-							</tbody>
-							</table>
-					</section>
-					
-
-				</section>
-
-				<section>
-
-					<section data-background="images/bg-green.png">
-					<h2>Performance of the model</h2>
-					<p>Does it actually work ?</p>
-					<p><small>Sort of ... I guess</small></p>
-					</section>
-
-					<section data-background="images/bg-grey.png" data-visibility="hidden">
-						<h3>Metrics</h3>
-						<img src="images/metrics.png" alt="Metrics" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
-					</section>
-
-					<section data-background="images/bg-grey.png">
-						<h3>Performance</h3>
-						<img src="images/perf.png" alt="Metrics" style="height: 400px; margin: 0 auto 4rem auto; background:transparent;">
-					</section>
-
-					<section data-background="images/bg-grey.png">
-						<h3>In other words :</h3>
-						<p>Controlling 1 export out of 3 allows to obtain 75% of the total exports that needs to be rejected</p>
-					</section>
-
-					<section data-background="images/bg-grey.png">
-						<h3>What variables are important to predict ?</h3>
-						<p><small>That's a secret, but we know how to compute them</small></p>
+						<h3>Demonstration</h3>
 					</section>
 
 				</section>
@@ -205,13 +85,12 @@
 				<section>
 
 					<section data-background="images/bg-green.png">
-					<h2>Future work</h2>
-					<p>"I need to keep my job, please !"</p>
-					<p><small>(My boss is in the room)</small></p>
+					<h2>Apprentissage continu</h2>
+					<p>Combattre la dérive d'un modèle en production</p>
 					</section>
 
 					<section data-background="images/bg-grey.png">
-						<h3>Continous training</h3>
+						<h3>Pourquoi la dérive se produit-elle ?</h3>
 						<ul>
 							<li class="fragment">Detecting data shifting</li>
 							<li class="fragment">Labelling the data correctly</li>
@@ -219,26 +98,19 @@
 					</section>
 
 					<section data-background="images/bg-grey.png">
-						<h3>Other ideas</h3>
+						<h3>Commment lutter ?</h3>
 						<ul>
-							<li class="fragment">Training a model file by file (350k files labelled available)</li>
-							<li class="fragment">Using more data from automatic controls</li>
+							<li class="fragment">Detecting data shifting</li>
+							<li class="fragment">Labelling the data correctly</li>
 						</ul>
 					</section>
-
 				</section>
 
 				<section>
-
 					<section data-background="images/bg-green.png">
-					<h2>Thank you for your attention</h2>
-					<p>Feel free to ask any question !</p>
+					<h2>Merci pour votre attention</h2>
 					</section>
-
-
 				</section>
-
-
 			</div>
 		</div>
 
