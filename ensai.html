@@ -1,180 +1,281 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
 
-	<head>
-		<meta charset="utf-8">
+    <title>Mixed-method for output checking</title>
 
-		<title>Mixed-method for output checking</title>
+    <meta name="description" content="A framework to analyse exports" />
+    <meta name="author" content="Titouan Rigaud" />
 
-		<meta name="description" content="A framework to analyse exports">
-		<meta name="author" content="Titouan Rigaud">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background="images/bg-grey.png">
+          <a href="https://casd.eu">
+            <img
+              src="logos/casd_logo.png"
+              alt="casd logo"
+              style="
+                height: 250px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+                -webkit-filter: invert(1);
+                filter: invert(1);
+              "
+              class="demo-logo"
+            />
+          </a>
+          <h3>
+            Un modèle d'apprentissage au service de la détection des fuites de
+            données
+          </h3>
+          <p>
+            <small>Titouan Rigaud</small>
+          </p>
+        </section>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Contexte</h2>
+            <p>Bienvenue dans le contrôle d'exports</p>
+          </section>
 
-				<section data-background="images/bg-grey.png">
-					<a href="https://casd.eu">
-						<img src="logos/casd_logo.png" alt="casd logo" style="height: 250px; margin: 0 auto 4rem auto; background:transparent; -webkit-filter: invert(1); filter: invert(1);" class="demo-logo">
-					</a>
-					<h3>Un modèle d'apprentissage au service de la détection des fuites de données</h3>
-					<p>
-						<small>Titouan Rigaud</small>
-					</p>
-				</section>
+          <section data-background="images/bg-grey.png">
+            <h3>Le système manuel en place</h3>
+            <img
+              src="images/manual_fr.png"
+              alt="manual schema"
+              style="
+                height: 500px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+              "
+            />
+          </section>
 
-				<section>
+          <section data-background="images/bg-grey.png">
+            <h3>Processus d'apprentissage</h3>
+            <img
+              src="images/automatic_fr.png"
+              alt="automatic schema"
+              style="
+                height: 500px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+              "
+            />
+          </section>
 
-					<section data-background="images/bg-green.png">
-					<h2>Contexte</h2>
-					<p>Bienvenue dans le contrôle d'exports</p>
-					</section>
+          <section data-background="images/bg-grey.png">
+            <h3>Un modèle complet</h3>
+            <img
+              src="images/archi_fr.png"
+              alt="Architecture schema"
+              style="
+                height: 500px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+              "
+            />
+          </section>
 
-					<section data-background="images/bg-grey.png">
-						<h3>Le système manuel en place</h3>
-						<img src="images/manual_fr.png" alt="manual schema" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
-					</section>
+          <section data-background="images/bg-grey.png">
+            <h3>Methodologie de l'apprentissage</h3>
+            <section data-background="images/bg-grey.png" data-auto-animate>
+              <h3>Training models</h3>
+              <div class="r-stack">
+                <img
+                  class="fragment fade-out"
+                  data-fragment-index="0"
+                  src="images/methodo_man.png"
+                  alt="methodo man"
+                  style="
+                    height: 450px;
+                    margin: 0 auto 4rem auto;
+                    background: transparent;
+                  "
+                />
+                <img
+                  class="fragment current-visible"
+                  data-fragment-index="0"
+                  src="images/methodo_auto.png"
+                  alt="methodo auto"
+                  style="
+                    height: 450px;
+                    margin: 0 auto 4rem auto;
+                    background: transparent;
+                  "
+                />
+              </div>
+            </section>
+          </section>
+        </section>
 
-					<section data-background="images/bg-grey.png">
-						<h3>Processus d'apprentissage</h3>
-						<img src="images/automatic_fr.png" alt="automatic schema" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
-					</section>
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Parralélisation et banque de modèles</h2>
+            <p>Un conteneur pour les contrôler tous</p>
+          </section>
 
-					<section data-background="images/bg-grey.png">
-						<h3>Un modèle complet</h3>
-						<img src="images/archi_fr.png" alt="Architecture schema" style="height: 500px; margin: 0 auto 4rem auto; background:transparent;">
-					</section>
+          <section data-background="images/bg-grey.png">
+            <h3>Kubernetes</h3>
+            <img
+              src="images/Kubernetes.png"
+              alt="Kubernetes logo"
+              style="
+                height: 250px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+              "
+            />
+          </section>
 
-					<section data-background="images/bg-grey.png">
-						<h3>Methodologie de l'apprentissage</h3>
-						<section data-background="images/bg-grey.png" data-auto-animate>
-							<h3>Training models </h3>
-							<div class="r-stack">
-								<img class="fragment fade-out" data-fragment-index="0" src="images/methodo_man.png" alt="methodo man" style="height: 450px; margin: 0 auto 4rem auto; background:transparent;">
-								<img class="fragment current-visible" data-fragment-index="0" src="images/methodo_auto.png" alt="methodo auto" style="height: 450px; margin: 0 auto 4rem auto; background:transparent;">
-							  </div>
-						</section>
-					</section>
+          <section data-background="images/bg-grey.png">
+            <h3>Demonstration</h3>
+          </section>
+        </section>
 
-				</section>
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Apprentissage continu</h2>
+            <p>Combattre la dérive d'un modèle en production</p>
+          </section>
 
-				<section>
+          <section data-background="images/bg-grey.png">
+            <blockquote
+              cite="https://www.forbes.com/sites/forbestechcouncil/2019/04/03/why-machine-learning-models-crash-and-burn-in-production/?sh=e27560e2f437"
+            >
+              &ldquo;La précision de votre modèle est à son maximum jusqu'à ce
+              que vous commenciez à l'utiliser. Ensuite, elle décroit car le
+              monde sur lequel le modèle a été entrainé change. &rdquo;
+            </blockquote>
+            <p><small>David Talby - 2019 - Forbes</small></p>
+            <p>
+              <small
+                >Why Machine Learning Models Crash And Burn In Production</small
+              >
+            </p>
+          </section>
 
-					<section data-background="images/bg-green.png">
-						<h2>Parralélisation et banque de modèles</h2>
-						<p>Un conteneur pour les contrôler tous</p>
-					</section>
+          <section data-background="images/bg-grey.png">
+            <p>
+              L'inadéquation entre données de production et données
+              d'entrainement est la cause de l'échec des modèles à l'étape de
+              production
+            </p>
+          </section>
 
-					<section data-background="images/bg-grey.png">
-						<h3>Kubernetes</h3>
-						<img src="images/Kubernetes.png" alt="Kubernetes logo" style="height: 250px; margin: 0 auto 4rem auto; background:transparent;">
-					</section>
+          <section data-background="images/bg-grey.png">
+            <h3>Commment lutter ?</h3>
+            <ul>
+              <li class="fragment">
+                Monitorer des variations dans les données de test
+              </li>
+              <li class="fragment">
+                Detecter la chute de performance du modèle
+              </li>
+              <li class="fragment">
+                Entrainer un autre modèle avec des données plus proches du réel
+              </li>
+            </ul>
+          </section>
+        </section>
 
-					<section data-background="images/bg-grey.png">
-						<h3>Demonstration</h3>
-					</section>
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Merci pour votre attention</h2>
+          </section>
+        </section>
 
-				</section>
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>A propos du modèle de Boosting</h2>
+          </section>
 
-				<section>
+          <section data-background="images/bg-grey.png">
+            <h3>XGboost en schéma</h3>
+            <img
+              src="images/xgb.png"
+              alt="xgb explication"
+              style="
+                height: 450px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+              "
+            />
+          </section>
 
-					<section data-background="images/bg-green.png">
-					<h2>Apprentissage continu</h2>
-					<p>Combattre la dérive d'un modèle en production</p>
-					</section>
+          <section data-background="images/bg-grey.png">
+            <h3>Les raisons de sa popularité</h3>
+            <ul>
+              <li>Parralélisation partielle</li>
+              <li>Régularisation contre le sur-apprentissage</li>
+              <li>Gestion des données manquantes</li>
+              <li>Validation croisée</li>
+              <li>Vitesse d'entrainement</li>
+            </ul>
+          </section>
 
-					<section data-background="images/bg-grey.png">
-							<blockquote cite="https://www.forbes.com/sites/forbestechcouncil/2019/04/03/why-machine-learning-models-crash-and-burn-in-production/?sh=e27560e2f437">
-								&ldquo;La précision de votre modèle est à son maximum jusqu'à ce que vous commenciez à l'utiliser. 
-								Ensuite, elle décroit car le monde sur lequel le modèle a été entrainé change.	
-								&rdquo;
-							</blockquote>
-							<p><small>David Talby - 2019 - Forbes</small></p>
-							<p><small>Why Machine Learning Models Crash And Burn In Production</small></p>
-					</section>
+          <section data-background="images/bg-grey.png">
+            <h3>La raison de sa popularité</h3>
+            <ul>
+              <li>Un niveau de performance inégalé sur tout type de données</li>
+            </ul>
+          </section>
+        </section>
 
-				<section data-background="images/bg-grey.png">
-					<p>L'inadéquation entre données de production et données d'entrainement est la cause de l'échec des modèles à l'étape de production</p>
-				</section>
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Validation de données</h2>
+          </section>
 
-					<section data-background="images/bg-grey.png">
-						<h3>Commment lutter ?</h3>
-						<ul>
-							<li class="fragment">Monitorer des variations dans les données de test</li>
-							<li class="fragment">Detecter la chute de performance du modèle</li>
-							<li class="fragment">Entrainer un autre modèle avec des données plus proches du réel</li>
-						</ul>
-					</section>
-				</section>
+          <section data-background="images/bg-grey.png">
+            <h3>y-data profiling</h3>
+            <img
+              data-src="https://docs.profiling.ydata.ai/4.5/_static/img/ydata-profiling.gif"
+            />
+          </section>
+        </section>
+      </div>
+    </div>
 
-				<section>
-					<section data-background="images/bg-green.png">
-					<h2>Merci pour votre attention</h2>
-					</section>
-				</section>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
 
-				<section>
-					<section data-background="images/bg-green.png">
-						<h2>A propos du modèle de Boosting</h2>
-					</section>
-					
-					<section data-background="images/bg-grey.png">
-						<h3>XGboost en schéma</h3>
-						<img src="images/xgb.png" alt="xgb explication" style="height: 450px; margin: 0 auto 4rem auto; background:transparent;">
-
-					</section>
-
-					<section data-background="images/bg-grey.png">
-						<h3>Les raisons de sa popularité</h3>
-						<ul>
-							<li>Parralélisation partielle</li>
-							<li>Régularisation contre le sur-apprentissage</li>
-							<li>Gestion des données manquantes</li>
-							<li>Validation croisée</li>
-							<li>Vitesse d'entrainement</li>
-						</ul>
-					</section>
-
-					<section data-background="images/bg-grey.png">
-						<h3>La raison de sa popularité</h3>
-						<ul>
-							<li>Un niveau de performance inégalé sur tout type de données</li>
-						</ul>
-					</section>
-
-				</section>
-
-			</div>
-		</div>
-
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/zoom/zoom.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/search/search.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				center: true,
-				hash: true,
-
-				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
-			});
-		</script>
-	</body>
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+        ],
+      });
+    </script>
+  </body>
 </html>
