@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Mixed-method for output checking</title>
+
+    <meta name="description" content="A framework to analyse exports" />
+    <meta name="author" content="Titouan Rigaud" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background="images/bg-grey.png">
+          <a href="https://casd.eu">
+            <img
+              src="logos/casd_logo.png"
+              alt="casd logo"
+              style="
+                height: 250px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+                -webkit-filter: invert(1);
+                filter: invert(1);
+              "
+              class="demo-logo"
+            />
+          </a>
+          <h3>
+            Un modèle d'apprentissage au service de la détection des fuites de
+            données
+          </h3>
+          <p>
+            <small>Titouan Rigaud</small>
+          </p>
+          <aside class="notes">
+            Se présenter - master Dire que c'est au CASD
+          </aside>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Contexte</h2>
+            <p>Bienvenue dans le contrôle d'exports</p>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Quel est le problème ?</h3>
+            <img
+              src="images/manual_fr.png"
+              alt="manual schema"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+            <aside class="notes">
+              Besoin clés : - Temps gagné par les statisticiens - Possibilité
+              d'ouvrir tous les fichiers
+            </aside>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Ce qu'il faut réaliser :</h3>
+            <img
+              src="images/automatic_fr.png"
+              alt="automatic schema"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Les difficultés principales</h3>
+            <ol>
+              <li class="fragment">
+                Difficile d'entrainer un modèle sur ces données
+              </li>
+              <li class="fragment">Grande variété de fichiers</li>
+              <li class="fragment">Comparer les modèles</li>
+              <li class="fragment">
+                Déployer un modèle facilement et rapidement
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Problème du type de données et de leur variété</h2>
+            <p>
+              Transformer un zip contenant des fichiers en série de variables
+            </p>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Une application dédiée</h3>
+            <ul>
+              <li class="fragment">
+                Du code objet python - des librairies pour ouvrir les fichiers
+              </li>
+              <li class="fragment">Une API contactable par HTTP</li>
+              <li class="fragment">
+                Une base de données des variables avec SQLite
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Problème de la comparaison rapide des modèles</h2>
+            <p>
+              Comparer les variables / les algorithmes / les hyperparamètres
+            </p>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>
+              Outil de suivi et comparaison des modèles
+              (hyperparamètres/algorithmes)
+            </h3>
+            <img
+              src="images/mlflow.gif"
+              alt="mlflow"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Outil de comparaison des variables</h3>
+            <img
+              src="images/shap.gif"
+              alt="shap"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Un outil d'orchestration des tâches</h3>
+            <img
+              src="images/argo_workflow.gif"
+              alt="workflow"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Problème du déploiement automatisé</h2>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Un outil de déploiement continu</h3>
+            <img
+              src="images/argo_CD.gif"
+              alt="CD"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Une solution générale au problème</h2>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Architecture de la solution</h3>
+            <img
+              src="images/archi_fr.png"
+              alt="Architecture schema"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Quels résultats ?</h2>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Performance du modèle</h3>
+            <img
+              src="images/perf.png"
+              alt="Performance"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Performance du système</h3>
+            <img
+              src="images/matrice.png"
+              alt="Architecture schema"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Futures perspectives</h2>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <ul>
+              <li>Lutter contre la dérive des modèles</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>A propos du modèle</h2>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>A propos de la méthodologie</h2>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>A propos de la validation de données</h2>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>A propos de la méthodologie</h2>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+        ],
+      });
+    </script>
+  </body>
+</html>
