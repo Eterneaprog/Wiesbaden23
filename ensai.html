@@ -223,8 +223,102 @@
           <section data-background="images/bg-grey.png">
             <h3>La raison de sa popularité</h3>
             <ul>
-              <li>Un niveau de performance inégalé sur tout type de données</li>
+              <li>
+                Un niveau de performance inégalé sur tout type de données
+                tabulaires
+              </li>
             </ul>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>A propos du niveau de performance du modèle</h2>
+          </section>
+
+          <section data-background="images/bg-green.png">
+            <h3>Courbe ROC</h3>
+
+            <img
+              src="images/perf.png"
+              alt="Performance du modèle"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+
+          <section data-background="images/bg-green.png">
+            <h3>Matrice de confusion</h3>
+
+            <style type="text/css">
+              .tg {
+                border-collapse: collapse;
+                border-spacing: 0;
+              }
+              .tg td {
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+              }
+              .tg th {
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+              }
+              .tg .tg-nbj5 {
+                background-color: #fff;
+                border-color: inherit;
+                text-align: center;
+                vertical-align: top;
+              }
+              .tg .tg-jxgv {
+                background-color: #fff;
+                border-color: inherit;
+                text-align: left;
+                vertical-align: top;
+              }
+            </style>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-jxgv">Réalité \ Prédiction</th>
+                  <th class="tg-nbj5">Prédit accepté</th>
+                  <th class="tg-nbj5">Prédit refusé</th>
+                  <th class="tg-nbj5">Total<br /></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-jxgv">Export accepté</td>
+                  <td class="tg-nbj5">62</td>
+                  <td class="tg-nbj5">28</td>
+                  <td class="tg-nbj5">90</td>
+                </tr>
+                <tr>
+                  <td class="tg-jxgv">Export refusé</td>
+                  <td class="tg-nbj5">3</td>
+                  <td class="tg-nbj5">7</td>
+                  <td class="tg-nbj5">10</td>
+                </tr>
+                <tr>
+                  <td class="tg-jxgv">Total</td>
+                  <td class="tg-nbj5">65</td>
+                  <td class="tg-nbj5">35</td>
+                  <td class="tg-nbj5">100</td>
+                </tr>
+              </tbody>
+            </table>
           </section>
         </section>
 
