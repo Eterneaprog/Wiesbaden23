@@ -27,20 +27,18 @@
     <div class="reveal">
       <div class="slides">
         <section data-background="images/bg-grey.png">
-          <a href="https://casd.eu">
-            <img
-              src="logos/casd_logo.png"
-              alt="casd logo"
-              style="
-                height: 250px;
-                margin: 0 auto 4rem auto;
-                background: transparent;
-                -webkit-filter: invert(1);
-                filter: invert(1);
-              "
-              class="demo-logo"
-            />
-          </a>
+          <img
+            src="logos/casd_logo.png"
+            alt="casd logo"
+            class="r-stretch"
+            style="
+              height: 250px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+              -webkit-filter: invert(1);
+              filter: invert(1);
+            "
+          />
           <h3>
             Un modèle d'apprentissage au service de la détection des fuites de
             données
@@ -48,6 +46,9 @@
           <p>
             <small>Titouan Rigaud</small>
           </p>
+          <aside class="notes">
+            Se présenter - master Dire que c'est au CASD
+          </aside>
         </section>
 
         <section>
@@ -57,17 +58,21 @@
           </section>
 
           <section data-background="images/bg-grey.png">
-            <h3>Le système manuel en place</h3>
+            <h3>Quel est le problème ?</h3>
             <img
               src="images/manual_fr.png"
               alt="manual schema"
               class="r-stretch"
               style="margin: 0 auto 4rem auto; background: transparent"
             />
+            <aside class="notes">
+              Besoin clés : - Temps gagné par les statisticiens - Possibilité
+              d'ouvrir tous les fichiers
+            </aside>
           </section>
 
           <section data-background="images/bg-grey.png">
-            <h3>Processus d'apprentissage</h3>
+            <h3>Ce qu'il faut réaliser :</h3>
             <img
               src="images/automatic_fr.png"
               alt="automatic schema"
@@ -77,32 +82,185 @@
           </section>
 
           <section data-background="images/bg-grey.png">
-            <h3>Un modèle complet</h3>
+            <h3>Les difficultés principales</h3>
+            <ol>
+              <li class="fragment">
+                Difficile d'entrainer un modèle sur ces données
+              </li>
+              <li class="fragment">Grande variété de fichiers</li>
+              <li class="fragment">Comparer les modèles</li>
+              <li class="fragment">
+                Déployer un modèle facilement et rapidement
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Problème du type de données et de leur variété</h2>
+            <p>
+              Transformer un zip contenant des fichiers en série de variables
+            </p>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Une application dédiée</h3>
+            <ul>
+              <li class="fragment">
+                Du code objet python - des librairies pour ouvrir les fichiers
+              </li>
+              <li class="fragment">Une API contactable par HTTP</li>
+              <li class="fragment">Une base de données des variables</li>
+            </ul>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Gestion des formats</h3>
             <img
-              src="images/archi_fr.png"
-              alt="Architecture schema"
+              src="images/app1.png"
+              alt="app 1"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Problème de la comparaison rapide des modèles</h2>
+            <p>
+              Comparer les variables / les algorithmes / les hyperparamètres
+            </p>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Outil de suivi des modèles</h3>
+            <img
+              src="images/mlflow_table.gif"
+              alt="mlflow"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+
+          <section data-background="images/bg-green.png">
+            <h3>Permet de tracer en un seul outil</h3>
+            <ul>
+              <li>Les données d'entrainement</li>
+              <li>L'algorithme</li>
+              <li>Les hyperparamètres</li>
+            </ul>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Comparaison des modèles (Hyperparamètres / Algorithmes)</h3>
+            <img
+              src="images/mlflow_graph.gif"
+              alt="mlflow"
               class="r-stretch"
               style="margin: 0 auto 4rem auto; background: transparent"
             />
           </section>
 
           <section data-background="images/bg-grey.png">
-            <h3>Methodologie de l'apprentissage</h3>
+            <h3>Comparaison des variables</h3>
+            <img
+              src="images/shap.gif"
+              alt="shap"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Un outil d'orchestration des tâches</h3>
+            <img
+              src="images/argo_workflow.gif"
+              alt="workflow"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Problème du déploiement rapide</h2>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Un outil de déploiement continu</h3>
+            <img
+              src="images/argocd.gif"
+              alt="CD"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+
+          <section data-background="images/bg-green.png">
+            <ul>
+              <li>Publication du modèle avec MLFlow</li>
+              <li>Détection d'un changement avec ArgoCD</li>
+              <li>Déploiement automatisé du nouveau modèle</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Une solution générale au problème</h2>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Architecture de la solution</h3>
+            <img
+              src="images/archi_fr.png"
+              alt="Architecture schema"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+            <aside class="notes">
+              Client serveur de traitement dans la classification du Gartner
+              Group (Revamping / CS présentation / CS Traitement / CS données /
+              CS données réparties) Modèle hierarchique
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/bg-green.png">
+            <h2>Quels résultats pour le modèle mis en production ?</h2>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Performance du modèle en production</h3>
+            <img
+              src="images/roc.png"
+              alt="Performance"
+              class="r-stretch"
+              style="margin: 0 auto 4rem auto; background: transparent"
+            />
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Une autre façon d'évaluer</h3>
             <div class="r-stack">
               <img
+                src="images/matrice_brut.png"
                 class="fragment fade-out"
                 data-fragment-index="0"
-                src="images/methodo_man.png"
-                alt="methodo man"
-                height="550"
+                alt="Matrice des résultats bruts"
+                class="r-stretch"
                 style="margin: 0 auto 4rem auto; background: transparent"
               />
               <img
-                class="fragment current-visible"
+                src="images/matrice_dual.png"
+                class="fragment"
                 data-fragment-index="0"
-                src="images/methodo_auto.png"
-                alt="methodo auto"
-                height="550"
+                alt="Matrices des résultats en proportion"
+                class="r-stretch"
                 style="margin: 0 auto 4rem auto; background: transparent"
               />
             </div>
@@ -111,90 +269,53 @@
 
         <section>
           <section data-background="images/bg-green.png">
-            <h2>Parralélisation et banque de modèles</h2>
-            <p>Un conteneur pour les contrôler tous</p>
+            <h2>Conclusion et futures perspectives</h2>
           </section>
 
           <section data-background="images/bg-grey.png">
-            <h3>Kubernetes</h3>
-            <img
-              src="images/Kubernetes.png"
-              alt="Kubernetes logo"
-              height="450"
-              style="margin: 0 auto 4rem auto; background: transparent"
-            />
-          </section>
-
-          <section data-background="images/bg-grey.png">
-            <h3>Demonstration</h3>
-          </section>
-
-          <section data-background="images/bg-grey.png">
-            <iframe
-              class="r-stretch"
-              src="https://www.youtube.com/embed/GITa3bDvNOg?si=YMy97n1LTmb8Smt8&amp%3Bcontrols=0&amp%3Bshowinfo=0&amp%3Bmodestbranding=1&amp%3B"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </section>
-        </section>
-
-        <section>
-          <section data-background="images/bg-green.png">
-            <h2>Apprentissage continu</h2>
-            <p>Combattre la dérive d'un modèle en production</p>
-          </section>
-
-          <section data-background="images/bg-grey.png">
-            <blockquote
-              cite="https://www.forbes.com/sites/forbestechcouncil/2019/04/03/why-machine-learning-models-crash-and-burn-in-production/?sh=e27560e2f437"
-            >
-              &ldquo;La précision de votre modèle est à son maximum jusqu'à ce
-              que vous commenciez à l'utiliser. Ensuite, elle décroit car le
-              monde sur lequel le modèle a été entrainé change. &rdquo;
-            </blockquote>
-            <p><small>David Talby - 2019 - Forbes</small></p>
-            <p>
-              <small
-                >Why Machine Learning Models Crash And Burn In Production</small
-              >
-            </p>
-          </section>
-
-          <section data-background="images/bg-grey.png">
-            <p>
-              L'inadéquation entre données de production et données
-              d'entrainement est la cause de l'échec des modèles à l'étape de
-              production
-            </p>
-          </section>
-
-          <section data-background="images/bg-grey.png">
-            <h3>Commment lutter ?</h3>
+            <h3>Les apports de ce stage</h3>
             <ul>
-              <li class="fragment">
-                Monitorer des variations dans les données de test
+              <li>Une gestion centralisée des variables (Feature Store)</li>
+              <li>
+                Un système MLOps complet qui permet de suivre la chaîne de
+                production
               </li>
-              <li class="fragment">
-                Detecter la chute de performance du modèle
-              </li>
-              <li class="fragment">
-                Entrainer un autre modèle avec des données plus proches du réel
+              <li>
+                Une interface graphique qui permet de contrôler le système
               </li>
             </ul>
           </section>
-        </section>
 
-        <section>
-          <section data-background="images/bg-green.png">
-            <h2>Merci pour votre attention</h2>
+          <section data-background="images/bg-grey.png">
+            <h3>Les perspectives futures</h3>
+            <ul>
+              <li>Lutter contre la dérive du modèle en production</li>
+              <li>
+                Améliorer les perforances en entrainant un modèle fichier par
+                fichier
+              </li>
+            </ul>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <img
+              src="logos/casd_logo.png"
+              alt="casd logo"
+              class="r-stretch"
+              style="
+                margin: 0 auto 4rem auto;
+                background: transparent;
+                -webkit-filter: invert(1);
+                filter: invert(1);
+              "
+            />
+            <h3>Merci de votre attention</h3>
           </section>
         </section>
 
         <section>
           <section data-background="images/bg-green.png">
-            <h2>A propos du modèle de Boosting</h2>
+            <h2>A propos du modèle</h2>
           </section>
 
           <section data-background="images/bg-grey.png">
@@ -231,118 +352,35 @@
 
         <section>
           <section data-background="images/bg-green.png">
-            <h2>A propos du niveau de performance du modèle</h2>
+            <h2>A propos de la méthodologie</h2>
           </section>
 
-          <section data-background="images/bg-green.png">
-            <h3>Courbe ROC</h3>
-
-            <img
-              src="images/perf.png"
-              alt="Performance du modèle"
-              class="r-stretch"
-              style="margin: 0 auto 4rem auto; background: transparent"
-            />
-          </section>
-
-          <section data-background="images/bg-green.png">
-            <h3>Matrice de confusion</h3>
-
-            <style type="text/css">
-              .tg {
-                border-collapse: collapse;
-                border-spacing: 0;
-              }
-              .tg td {
-                border-color: black;
-                border-style: solid;
-                border-width: 1px;
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-                overflow: hidden;
-                padding: 10px 5px;
-                word-break: normal;
-              }
-              .tg th {
-                border-color: black;
-                border-style: solid;
-                border-width: 1px;
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-                font-weight: normal;
-                overflow: hidden;
-                padding: 10px 5px;
-                word-break: normal;
-              }
-              .tg .tg-0siv {
-                background-color: #343434;
-                border-color: #000000;
-                color: #ffffff;
-                font-size: 22px;
-                text-align: center;
-                vertical-align: middle;
-              }
-              .tg .tg-xjqi {
-                background-color: #663234;
-                border-color: #000000;
-                color: #ffffff;
-                font-size: 22px;
-                text-align: center;
-                vertical-align: middle;
-              }
-              .tg .tg-703t {
-                background-color: #010066;
-                border-color: #000000;
-                color: #ffffff;
-                font-size: 22px;
-                text-align: center;
-                vertical-align: middle;
-              }
-              .tg .tg-gi6u {
-                background-color: #000000;
-                border-color: #000000;
-                color: #ffffff;
-                font-size: 22px;
-                text-align: center;
-                vertical-align: middle;
-              }
-            </style>
-            <table class="tg">
-              <thead>
-                <tr>
-                  <th class="tg-jxgv">Réalité \ Prédiction</th>
-                  <th class="tg-nbj5">Prédit accepté</th>
-                  <th class="tg-nbj5">Prédit refusé</th>
-                  <th class="tg-nbj5">Total<br /></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tg-jxgv">Export accepté</td>
-                  <td class="tg-nbj5">62</td>
-                  <td class="tg-nbj5">28</td>
-                  <td class="tg-nbj5">90</td>
-                </tr>
-                <tr>
-                  <td class="tg-jxgv">Export refusé</td>
-                  <td class="tg-nbj5">3</td>
-                  <td class="tg-nbj5">7</td>
-                  <td class="tg-nbj5">10</td>
-                </tr>
-                <tr>
-                  <td class="tg-jxgv">Total</td>
-                  <td class="tg-nbj5">65</td>
-                  <td class="tg-nbj5">35</td>
-                  <td class="tg-nbj5">100</td>
-                </tr>
-              </tbody>
-            </table>
+          <section data-background="images/bg-grey.png">
+            <h3>Methodologie de l'apprentissage</h3>
+            <div class="r-stack">
+              <img
+                class="fragment fade-out"
+                data-fragment-index="0"
+                src="images/methodo_man.png"
+                alt="methodo man"
+                height="550"
+                style="margin: 0 auto 4rem auto; background: transparent"
+              />
+              <img
+                class="fragmente"
+                data-fragment-index="0"
+                src="images/methodo_auto.png"
+                alt="methodo auto"
+                height="550"
+                style="margin: 0 auto 4rem auto; background: transparent"
+              />
+            </div>
           </section>
         </section>
 
         <section>
           <section data-background="images/bg-green.png">
-            <h2>Validation de données</h2>
+            <h2>A propos de la validation de données</h2>
           </section>
 
           <section data-background="images/bg-grey.png">
@@ -364,9 +402,10 @@
     <script>
       Reveal.initialize({
         controls: true,
-        progress: true,
+        progress: false,
         center: true,
         hash: true,
+        slideNumber: true,
 
         plugins: [
           RevealZoom,
