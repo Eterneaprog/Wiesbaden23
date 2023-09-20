@@ -146,6 +146,15 @@
             />
           </section>
 
+          <section data-background="images/bg-green.png">
+            <h3>Permet de tracer en un seul outil</h3>
+            <ul>
+              <li>Les données d'entrainement</li>
+              <li>L'algorithme</li>
+              <li>Les hyperparamètres</li>
+            </ul>
+          </section>
+
           <section data-background="images/bg-grey.png">
             <h3>Comparaison des modèles (Hyperparamètres / Algorithmes)</h3>
             <img
@@ -157,7 +166,7 @@
           </section>
 
           <section data-background="images/bg-grey.png">
-            <h3>Outil de comparaison des variables</h3>
+            <h3>Comparaison des variables</h3>
             <img
               src="images/shap.gif"
               alt="shap"
@@ -191,6 +200,14 @@
               style="margin: 0 auto 4rem auto; background: transparent"
             />
           </section>
+
+          <section data-background="images/bg-green.png">
+            <ul>
+              <li>Publication du modèle avec MLFlow</li>
+              <li>Détection d'un changement avec ArgoCD</li>
+              <li>Déploiement automatisé du nouveau modèle</li>
+            </ul>
+          </section>
         </section>
 
         <section>
@@ -211,11 +228,11 @@
 
         <section>
           <section data-background="images/bg-green.png">
-            <h2>Quels résultats ?</h2>
+            <h2>Quels résultats pour le modèle mis en production ?</h2>
           </section>
 
           <section data-background="images/bg-grey.png">
-            <h3>Performance du modèle</h3>
+            <h3>Performance du modèle en production</h3>
             <img
               src="images/roc.png"
               alt="Performance"
@@ -225,7 +242,7 @@
           </section>
 
           <section data-background="images/bg-grey.png">
-            <h3>Performance du système</h3>
+            <h3>Une autre façon d'évaluer</h3>
             <div class="r-stack">
               <img
                 src="images/matrice_brut.png"
@@ -249,12 +266,27 @@
 
         <section>
           <section data-background="images/bg-green.png">
-            <h2>Futures perspectives</h2>
+            <h2>Conclusion et futures perspectives</h2>
           </section>
 
           <section data-background="images/bg-grey.png">
+            <h3>Les apports de ce stage</h3>
             <ul>
-              <li>Lutter contre la dérive des modèles</li>
+              <li>Une gestion centralisée des variables (Feature Store)</li>
+              <li>
+                Un système MLOps complet qui permet de suivre la chaîne de
+                production
+              </li>
+              <li>
+                Une interface graphique qui permet de contrôler le système
+              </li>
+            </ul>
+          </section>
+
+          <section data-background="images/bg-grey.png">
+            <h3>Les perspectives futures</h3>
+            <ul>
+              <li>Lutter contre la dérive du modèle en production</li>
               <li>
                 Améliorer les perforances en entrainant un modèle fichier par
                 fichier
@@ -355,6 +387,7 @@
         progress: true,
         center: true,
         hash: true,
+        slideNumber: true,
 
         plugins: [
           RevealZoom,
