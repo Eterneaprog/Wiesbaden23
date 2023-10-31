@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Mixed-method for output checking</title>
+
+    <meta name="description" content="A framework to analyse exports" />
+    <meta name="author" content="Titouan Rigaud" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background="images/bg-grey.png">
+          <h3>Colysee</h3>
+          <img
+            src="logos/casd_logo.png"
+            alt="casd logo"
+            class="r-stretch"
+            style="
+              height: 250px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+              -webkit-filter: invert(1);
+              filter: invert(1);
+            "
+          />
+          <p>
+            <small>31/10/2023</small>
+          </p>
+        </section>
+
+        <section data-background="images/bg-green.png">
+          <h3>About CASD and our data</h3>
+          <ul>
+            <li>10 years of data -> 20 000 exports / 350 000 files</li>
+            <li>Manual controls for the majority of projects</li>
+            <li>Automatic controls for some specific projects</li>
+          </ul>
+
+        </section>
+
+        <section data-background="images/bg-green.png">
+            <h3>Current state of the project</h3>
+            <ul>
+              <li>Open several type of files and extract the texts / tables / images </li>
+              <li>Get the label of an export</li>
+              <li>Generate variables on the metadata of the export / the file</li>
+              <li>Train a model on this data and call manual control when risk is high</li>
+            </ul>
+        </section>
+
+        <section data-background="images/bg-green.png">
+          <h3>Current development</h3>
+          <ul>
+            <li>Train the model file by file (dropping export by export approach) </li>
+            <li>Analyse content of a table / text / image</li>
+            <li>Use form data, user data, projects data, sources used</li>
+            <li>Continuous automated training </li>
+          </ul>
+      </section>
+
+      <section data-background="images/bg-green.png">
+        <h3>The future</h3>
+        <ul>
+          <li>Possibly an LLM for text </li>
+          <li>Possibly a Deel Learning model for images</li>
+          <li>A graphical user interface for controls</li>
+        </ul>
+    </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+        ],
+      });
+    </script>
+  </body>
+</html>
